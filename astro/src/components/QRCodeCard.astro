@@ -1,0 +1,66 @@
+---
+interface Props {
+  img: string;
+  headText: string;
+  contentText: string;
+}
+
+const { img, headText, contentText } = Astro.props;
+---
+
+<div class="center-container">
+  <div class="round-rectangle">
+    <img class="inner-round-rectangle" src={img} alt="QRcode" />
+    <div class="text-content">
+      <h1>{headText}</h1>
+      <p>{contentText}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .round-rectangle {
+    position: relative;
+    border-radius: 30px;
+    background-color: hsl(0, 0%, 100%);
+    width: 420px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .round-rectangle .inner-round-rectangle {
+    position: relative;
+    border-radius: 30px;
+    background-color: rgb(47, 124, 241);
+    width: 80%;
+  }
+
+  .round-rectangle .text-content {
+    text-align: center;
+    padding: 20px;
+    font-family: "Outfit", sans-serif;
+  }
+
+  .round-rectangle .text-content h1 {
+    font-weight: 700;
+  }
+
+  .round-rectangle .text-content p {
+    font-weight: 400;
+    color: hsl(212, 45%, 89%);
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+</style>
